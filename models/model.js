@@ -1,4 +1,4 @@
-const mongoose=required("mongoose");
+const mongoose= require("mongoose");
 
 //creating the schema for the our collection
 const courseSchema= new mongoose.Schema({

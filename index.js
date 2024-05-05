@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 //import the routers
-app.use("/courses",routes);
+app.use("/course",routes);
 
 const port =config.port.nbr
 app.listen(port,()=>{
