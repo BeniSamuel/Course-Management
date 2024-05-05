@@ -9,7 +9,7 @@ exports.creatingCourse = async(req,res)=>{
             content:Joi.string().required()
            });
 
-           const {error}= Joi.validate(req.body,Schema);
+           const {error}= Schema.validate(req.body,Schema);
            if(error) res.status(400).send(error.details[0].message);
 
            const course= new Course({
@@ -20,7 +20,7 @@ exports.creatingCourse = async(req,res)=>{
            course=await course.save();
            res.status(200).send(course);
     }catch(error){
-        res.status(500).send(error,"server error")
+        res.status(500).send(error)
     }
 }
 
